@@ -3201,6 +3201,7 @@
 			-ms-flex-grow: 1;
 			flex-grow: 1;
 			height: inherit;
+            background-color: #ffffff;
 			line-height: inherit;
 		}
 
@@ -3992,17 +3993,17 @@ input[type=text] {
 	border: 2px solid #ccc;
 	border-radius: 4px;
 	font-size: 16px;
-	background-color: snow;
-
+	background-color: #ffffff;
 	background-position: 10px 10px;
 	background-repeat: no-repeat;
 	padding: 12px 20px 12px 40px;
 	-webkit-transition: width 0.4s ease-in-out;
 	transition: width 0.4s ease-in-out;
-    color: #2a2f4a;
+    color: #000000;
 
 }
 
-input[type=text]:focus {
+input[type=text]:focus{
 	width: 100%;
+    background-color: #ffffff;
 }
