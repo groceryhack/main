@@ -2779,7 +2779,7 @@
 			min-height: 23em;
 			overflow: hidden;
 			position: relative;
-			width: 40%;
+			width: 100%;
 		}
 
 			.tiles article .image {
@@ -2854,7 +2854,7 @@
 			}
 
 			.tiles article:nth-child(4n - 1), .tiles article:nth-child(4n - 2) {
-				width: 60%;
+				width: 100%;
 			}
 
 			.tiles article:nth-child(6n - 5):before {
@@ -2974,7 +2974,7 @@
 				border-radius: 0;
 				display: block;
 				position: relative;
-				width: 30%;
+				width: 100%;
 			}
 
 				.spotlights > section > .image img {
