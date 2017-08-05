@@ -3973,3 +3973,14 @@ autocomplete{
 .resultList{
 	display: block;
 }
+
+.collapsible{
+	background-color: #fff;
+	margin:0;
+}
+
+
+.collapsible-header{
+	color: #000000;
+	background-color: #fff;
+}

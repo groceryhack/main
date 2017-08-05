@@ -3971,5 +3971,10 @@ autocomplete{
 
 .resultList{
 	color:#000000;
+    background-color: #6fc3df;
 	display: none;
+}
+
+.collapsible-header{
+    background-color: #8ea9e8;
 }
