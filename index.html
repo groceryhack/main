@@ -319,9 +319,9 @@
                 </script>
 
                 <script>
-                function repeatList(array, number) {
+                function repeatList(array,b) {
                     for (var number in array) {
-                        var newList = $("<li><div class=\"collapsible-header active\">" + array[number] + "</div><div class=\"collapsible-body\"><span>Lorem ipsum dolor sit amet.</span></div></li>");
+                        var newList = $("<li><div class=\"collapsible-header active\">" + array[number] + "</div><div class=\"collapsible-body\"><span>"+ b+"</span></div></li>");
                         $('#items').append(newList);
                     }
                 }
