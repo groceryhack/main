@@ -97,22 +97,54 @@
 
                             <script>
                                 //Getting the search retrieval
+//                                var dataReceived;
+//                                function getDataFromDatabase() {
+//                                    var ref = firebase.database().ref("/Aldi/");
+//                                    ref.once("value")
+//                                        .then(function (snapshot) {
+//                                            dataReceived = snapshot.child(finalSearchQuery).val();
+//                                            if (dataReceived!=null) {
+//                                                printResult();
+//                                            }
+//                                        });
+//                                }
+//
+//                                function showList(){
+//                                    document.getElementById('resultList').style.display= "show";
+//                                }
+
+                                //Getting the search retrieval
                                 var dataReceived;
+                                var igotthekey;
+                                var myval;
+                                var arr = [[], []];
+
                                 function getDataFromDatabase() {
                                     var ref = firebase.database().ref("/Aldi/");
                                     ref.once("value")
                                         .then(function (snapshot) {
                                             dataReceived = snapshot.child(finalSearchQuery).val();
-                                            if (dataReceived!=null) {
+
+                                            for (var key in dataReceived) {
+                                                if (dataReceived.hasOwnProperty(key)) {
+                                                    igotthekey = key;
+                                                    myval = dataReceived[key];
+                                                    for (i = 0; i < Object.keys(dataReceived).length; i++) {
+                                                        arr[i][0] = key;
+                                                        for (v = 0; v < Object.keys(dataReceived).length; v++) ;
+                                                        arr[0][v] = myval;
+                                                    }
+                                                    console.log(arr);
+                                                }
+                                            }
+
+                                            if (dataReceived != null) {
+
                                                 printResult();
                                             }
+
                                         });
                                 }
-
-                                function showList(){
-                                    document.getElementById('resultList').style.display= "show";
-                                }
-
                             </script>
 
 
@@ -156,41 +188,30 @@
                                     }
 
 //                                //The string with search query is finalSearchQuery
-//                                if(finalSearchQuery!=null) {
-//                                    getDataFromDatabase();
-//                                }
+                                if(finalSearchQuery!=null) {
+                                    getDataFromDatabase();
+                                }
 
                             }
 							</script>
-
 
 						</div>
 					</section>
 
 
-                <div class="resultSection">
-
-
-                </div>
-
-                <script>
-                    function printResult(){
-                        document.getElementById('.resultSection').innerHTML =;
-                    }
-                </script>
-
                 <div class="resultList">
+                    <p>The items are available at:</p>
                     <ul class="collapsible popout" data-collapsible="expandable">
                         <li>
-                            <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+                            <div class="collapsible-header">First</div>
                             <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
                         </li>
                         <li>
-                            <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+                            <div class="collapsible-header">Second</div>
                             <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
                         </li>
                         <li>
-                            <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+                            <div class="collapsible-header">Third</div>
                             <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
                         </li>
                     </ul>

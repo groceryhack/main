@@ -2936,6 +2936,7 @@
 		margin: 0 0 2em 0;
 		padding-left: 3.25em;
 		position: relative;
+        background-color: #2a2f4a;
 	}
 
 		.contact-method .icon {
@@ -2952,6 +2953,7 @@
 
 	.spotlights {
 		border-top: 0 !important;
+        background-color: #2a2f4a;
 	}
 
 		.spotlights + * {
