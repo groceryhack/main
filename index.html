@@ -123,6 +123,7 @@
 
 
                                 function getDataFromDatabase() {
+
                                     var ref = firebase.database().ref("/Aldi/");
                                     ref.once("value")
                                         .then(function (snapshot) {
@@ -137,29 +138,23 @@
                                                         for (v = 0; v < Object.keys(dataReceived).length; v++) ;
                                                         arr[0][v] = myval;
                                                     }
-                                                    var min = arr[0][1]
-                                                    for (i=1; Object.keys(dataReceived).length;i++)
-                                                    {
-                                                        if (arr[i][1] < min)
-                                                        {
-                                                            temp = arr[i][1];
-                                                            arr [i][1] = min;
-                                                            arr[0][1] = temp;
-                                                        }
+
                                                     }
 
                                                     console.log(arr);
                                                 }
-                                            }
+
 
                                             if (dataReceived != null) {
 
                                                 printResult();
                                             }
 
-                                        });
+
+                                });
                                 }
-                                function getFromColes() {
+
+                      function getFromColes() {
                                     var ref = firebase.database().ref("/Coles/");
                                     ref.once("value")
                                         .then(function (snapshot) {
@@ -174,26 +169,18 @@
                                                         for (v = 0; v < Object.keys(dataReceived).length; v++) ;
                                                         ColesArray[0][v] = myval;
                                                     }
-                                                    var min = ColesArray[0][1]
-                                                    for (i=1; Object.keys(dataReceived).length;i++)
-                                                    {
-                                                        if (ColesArray[i][1] < min)
-                                                        {
-                                                            temp = ColesArray[i][1];
-                                                            ColesArray [i][1] = min;
-                                                            ColesArray[0][1] = temp;
-                                                        }
+ temp2;
+
                                                     }
                                                     console.log(ColesArray);
 
 
                                                 }
-                                            }
+
 
                                             if (dataReceived != null) {
 
                                                 printResult();
-
                                             }
 
                                         });
@@ -201,6 +188,7 @@
                                 }
                                 function getFromWoolies()
 								{
+								    console.log("Here")
                                     var ref = firebase.database().ref("/Coles/");
                                     ref.once("value")
                                         .then(function (snapshot) {
@@ -215,16 +203,8 @@
                                                         for (v = 0; v < Object.keys(dataReceived).length; v++) ;
                                                         WooliesArray[0][v] = myval;
                                                     }
-                                                    var min = WooliesArray[0][1]
-                                                    for (i=1; Object.keys(dataReceived).length;i++)
-                                                    {
-                                                        if (WooliesArray[i][1] < min)
-                                                        {
-                                                            temp = WooliesArray[i][1];
-                                                            WooliesArray [i][1] = min;
-                                                            WooliesArray[0][1] = temp;
-                                                        }
-                                                    }
+
+
                                                     console.log(WooliesArray);
                                                 }
                                             }
@@ -235,6 +215,9 @@
                                             }
 
                                         });
+
+                                }
+                                function getFromAldi() {
 
                                 }
                             </script>
@@ -278,9 +261,10 @@
 
 //                                //The string with search query is finalSearchQuery
                                 if(finalSearchQuery!=null) {
+
+                                    getFromColes();
+                                    getFromWoolies();
                                     getDataFromDatabase();
-                                    getFromColes;
-                                    getFromWoolies;
 
                                 }
 
