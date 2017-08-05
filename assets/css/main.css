@@ -4012,6 +4012,7 @@
 #autocomplete-input{
     /*border: 2px #AEB6BF solid;*/
     background-color: #ffffff;
+    color: #000000;
 }
 
 input[type=text]:focus{
