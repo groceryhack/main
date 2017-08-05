@@ -96,12 +96,13 @@
 						<div class="inner">
 
 
-                            <form id="searchBar" onclick="hideImages()">
+                            <form id="searchBar" onsubmit="hideImages(event)"> <!--From https://stackoverflow.com/questions/13987300/how-to-trigger-enter-key-press-of-textbox-->
                                 <input type="text" name="search" class="autocomplete" id="search" placeholder="Search..">
                             </form>
 
-                            <script>
-                                function hideImages(){
+                            <script> // From https://stackoverflow.com/questions/2090657/how-do-i-switch-external-css-files/2090682#2090682
+                                function hideImages(e){
+                                    e.preventDefault();
                                     document.getElementById('pagestyle_css').href='assets/css/main-enter.css';
                                 }
                             </script>
