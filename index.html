@@ -19,6 +19,21 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+
+        <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyBDzDAMUTJgVfruhxhvAx4DL1i4MLJUxHc",
+                authDomain: "hackathon-database-7838b.firebaseapp.com",
+                databaseURL: "https://hackathon-database-7838b.firebaseio.com",
+                projectId: "hackathon-database-7838b",
+                storageBucket: "",
+                messagingSenderId: "857218536641"
+            };
+            firebase.initializeApp(config);
+        </script>
+
 	</head>
 	<body>
 
@@ -77,28 +92,55 @@
                                 if(searchQuery!=null) {
                                     finalSearchQuery = searchQuery.toLowerCase();
                                 }
-                                //The string with search query is finalSearchQuery
-                                if(finalSearchQuery!=null) {
-                                    getDataFromDatabase();
-                                }
-                            })();
+//                                //The string with search query is finalSearchQuery
+//                                if(finalSearchQuery!=null) {
+//                                    getDataFromDatabase();
+//                                }
+//                            })();
 
                             </script>
+
 
                             <script>
-//                                $('input.autocomplete').autocomplete({
-//                                    data: {
-//                                        "Apple": null,
-//                                        "Microsoft": null,
-//                                        "Google": 'https://placehold.it/250x250'
-//                                    }
-////                                    limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
-////                                    onAutocomplete: function(val) {
-//                                        // Callback function when value is autcompleted.
-////                                    },
-////                                    minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
-//                                });
+//                                //Getting the search retrieval
+//
+//                                var dataReceivedFromAldi;
+//                                var dataReceivedFromColes;
+//                                var dataReceivedFromWool;
+//                                var storeList = [];
+//
+//                                function getDataFromDatabase() {
+//                                    var refAldi = firebase.database().ref("/Aldi/fruits/");
+//                                    refAldi.once("value")
+//                                        .then(function (snapshot) {
+//                                            dataReceivedFromAldi = snapshot.child(finalSearchQuery).val();
+//                                            dataReceivedFromAldi = parseFloat(dataReceivedFromAldi);
+//                                            storeList.push(dataReceivedFromAldi);
+//                                            testPrintAldi();
+//                                        });
+//
+//                                    var refColes = firebase.database().ref("/Coles/meat");
+//                                    refColes.once("value")
+//                                        .then(function (snapshot) {
+//                                            dataReceivedFromColes = snapshot.child(finalSearchQuery).val();
+//                                            dataReceivedFromColes = parseFloat(dataReceivedFromColes);
+//                                            storeList.push(dataReceivedFromColes);
+//                                            testPrintColes();
+//                                        });
+//
+//                                    var refWool = firebase.database().ref("/Woolworths/");
+//                                    refWool.once("value")
+//                                        .then(function (snapshot) {
+//                                            dataReceivedFromWool = snapshot.child(finalSearchQuery).val();
+//                                            dataReceivedFromWool = parseFloat(dataReceivedFromWool);
+//                                            storeList.push(dataReceivedFromWool);
+//                                            testPrintWool();
+//                                        });
+//                                    storeList.sort();
+//                                }
+
                             </script>
+
 						</div>
 					</section>
 
