@@ -3407,7 +3407,7 @@
 		-webkit-align-items: center;
 		-ms-align-items: center;
 		align-items: center;
-		background-image: url("../../images/banner.jpg");
+
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
@@ -3440,7 +3440,7 @@
 			-webkit-pointer-events: none;
 			-ms-pointer-events: none;
 			pointer-events: none;
-			background-color: #242943;
+			background-color: #ffffff;
 			content: '';
 			display: block;
 			height: 100%;
@@ -3619,7 +3619,7 @@
 /* Main */
 
 	#main {
-		background-color: #2a2f4a;
+		background-color: #ffffff;
 	}
 
 		#main > * {
