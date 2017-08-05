@@ -8,9 +8,11 @@
 	<head>
 		<title>Forty by HTML5 UP</title>
 		<meta charset="utf-8" />
+
         <!-- Compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
 
+        <link rel="stylesheet" href="assets/css/main.css" />
         <!-- Compiled and minified JavaScript -->
         <script src="assets/js/jquery-3.2.1.min.js"></script>
 
@@ -20,7 +22,7 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 
-        <link rel="stylesheet" href="assets/css/main.css" />
+
 
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
@@ -72,16 +74,7 @@
 						</ul>
 					</nav>
 
-                <!-- Modal Structure -->
-                <div id="modal1" class="modal bottom-sheet">
-                    <div class="modal-content">
-                        <h4>Modal Header</h4>
-                        <p>A bunch of text</p>
-                    </div>
-                    <div class="modal-footer">
-                        <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-                    </div>
-                </div>
+
 
 
 				<!-- Banner -->
@@ -171,6 +164,31 @@
 
 						</div>
 					</section>
+
+
+
+                <!--Collapsible-->
+
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                    </li>
+                </ul>
+
+                <script>
+                    $(document).ready(function(){
+                        $('.collapsible').collapsible();
+                    });
+                </script>
 
 				<!-- Main -->
 					<div id="main">
