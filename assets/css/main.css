@@ -3427,7 +3427,7 @@
 		-ms-align-items: center;
 		align-items: center;
         background-color: #ffffff;
-        background-image: url("images/img1.jpeg");
+        background-image: url("/images/img1.jpeg");
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
