@@ -185,12 +185,15 @@
                                                         }
                                                     }
                                                     console.log(ColesArray);
+
+
                                                 }
                                             }
 
                                             if (dataReceived != null) {
 
                                                 printResult();
+
                                             }
 
                                         });
@@ -299,17 +302,9 @@
                 <div class="resultList">
                     <br>
                     <p>The items are available:</p>
-                    <ul class="collapsible popout" data-collapsible="expandable">
+                    <ul id="items" class="collapsible popout" data-collapsible="expandable">
                         <li>
                             <div class="collapsible-header active">First</div>
-                            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                        </li>
-                        <li>
-                            <div class="collapsible-header active">Second</div>
-                            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                        </li>
-                        <li>
-                            <div class="collapsible-header active">Third</div>
                             <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
                         </li>
                     </ul>
@@ -320,6 +315,18 @@
                 $(document).ready(function(){
                 $('.collapsible').collapsible();
                 });
+
+                </script>
+
+                <script>
+                function repeatList(array, number) {
+                    for (var number in array) {
+                        var newList = $("<li><div class=\"collapsible-header active\">" + array[number] + "</div><div class=\"collapsible-body\"><span>Lorem ipsum dolor sit amet.</span></div></li>");
+                        $('#items').append(newList);
+                    }
+                }
+
+
                 </script>
 
                 <!-- Main -->
