@@ -118,6 +118,9 @@
                                 var igotthekey;
                                 var myval;
                                 var arr = [[], []];
+                                var ColesArray = [[], []];
+                                var WooliesArray = [[], []];
+
 
                                 function getDataFromDatabase() {
                                     var ref = firebase.database().ref("/Aldi/");
@@ -144,6 +147,61 @@
                                             }
 
                                         });
+                                }
+                                function getFromColes() {
+                                    var ref = firebase.database().ref("/Coles/");
+                                    ref.once("value")
+                                        .then(function (snapshot) {
+                                            dataReceived = snapshot.child(finalSearchQuery).val();
+
+                                            for (var key in dataReceived) {
+                                                if (dataReceived.hasOwnProperty(key)) {
+                                                    igotthekey = key;
+                                                    myval = dataReceived[key];
+                                                    for (i = 0; i < Object.keys(dataReceived).length; i++) {
+                                                        ColesArray[i][0] = key;
+                                                        for (v = 0; v < Object.keys(dataReceived).length; v++) ;
+                                                        ColesArray[0][v] = myval;
+                                                    }
+                                                    console.log(ColesArray);
+                                                }
+                                            }
+
+                                            if (dataReceived != null) {
+
+                                                printResult();
+                                            }
+
+                                        });
+
+                                }
+                                function getFromWoolies()
+								{
+                                    var ref = firebase.database().ref("/Coles/");
+                                    ref.once("value")
+                                        .then(function (snapshot) {
+                                            dataReceived = snapshot.child(finalSearchQuery).val();
+
+                                            for (var key in dataReceived) {
+                                                if (dataReceived.hasOwnProperty(key)) {
+                                                    igotthekey = key;
+                                                    myval = dataReceived[key];
+                                                    for (i = 0; i < Object.keys(dataReceived).length; i++) {
+                                                        WooliesArray[i][0] = key;
+                                                        for (v = 0; v < Object.keys(dataReceived).length; v++) ;
+                                                        WooliesArray[0][v] = myval;
+                                                    }
+                                                    console.log(ColesArray);
+                                                }
+                                            }
+
+                                            if (dataReceived != null) {
+
+                                                printResult();
+                                            }
+
+                                        });
+
                                 }
                             </script>
 
@@ -188,6 +246,9 @@
                                 //The string with search query is finalSearchQuery
                                 if(finalSearchQuery!=null) {
                                     getDataFromDatabase();
+                                    getFromColes;
+                                    getFromWoolies;
+
                                 }
                             })();
 
