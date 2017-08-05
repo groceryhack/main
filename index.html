@@ -63,28 +63,6 @@
                             <ul id="slide-out" class="side-nav" >
                                 <li><a href="#!"><i class="material-icons">clear</i>My List:</a></li>
 
-                                <table style="color:black">
-                                    <tr style="background-color: #4CAF50; color: white">
-                                        <th>Item</th>
-                                        <th>Price</th>
-                                        <th>Quantity</th>
-                                        <th>Subtotal</th>
-                                    </tr>
-                                    <tr>
-                                        <td>Apple</td>
-                                        <td>$2</td>
-                                        <td>5</td>
-                                        <td>$10</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Beef</td>
-                                        <td>$5</td>
-                                        <td>10g</td>
-                                        <td>$50</td>
-                                    </tr>
-
-                                </table>
-
                             </ul>
                             <a href="#" data-activates="slide-out" class="button-collapse" style="border: 0.5px solid #87c5b2;color: #000;background-color: #87c5a4"><i class="material-icons">shopping_cart</i></a>
 
@@ -117,143 +95,141 @@
 					<section id="banner" class="major">
 						<div class="inner">
 
+                            <!--<script>-->
+
+                                <!--// JS Section 1: Getting the search retrieval-->
+                                <!--var dataReceived;-->
+                                <!--var dataReceivedFrombAldi;-->
+                                <!--var dataRecievedFromColes;-->
+                                <!--var dataRecievedFromWoolies;-->
+                                <!--var igotthekey;-->
+                                <!--var myval;-->
+                                <!--var AldiArray = [[], []];-->
+                                <!--var ColesArray = [[], []];-->
+                                <!--var WooliesArray = [[], []];-->
+
+
+                                <!--function getDataFromAldi() {-->
                             <script>
-                                //Getting the search retrieval
-//                                var dataReceived;
-//                                function getDataFromDatabase() {
-//                                    var ref = firebase.database().ref("/Aldi/");
-//                                    ref.once("value")
-//                                        .then(function (snapshot) {
-//                                            dataReceived = snapshot.child(finalSearchQuery).val();
-//                                            if (dataReceived!=null) {
-//                                                printResult();
-//                                            }
-//                                        });
-//                                }
-//
-//                                function showList(){
-//                                    document.getElementById('resultList').style.display= "show";
-//                                }
-
-                                //Getting the search retrieval
-                                var dataReceived;
-                                var igotthekey;
-                                var myval;
-                                var arr = [[], []];
-                                var ColesArray = [[], []];
-                                var WooliesArray = [[], []];
-
-
-                                function getDataFromDatabase() {
-
                                     var ref = firebase.database().ref("/Aldi/");
                                     ref.once("value")
                                         .then(function (snapshot) {
-                                            dataReceived = snapshot.child(finalSearchQuery).val();
-
-                                            for (var key in dataReceived) {
-                                                if (dataReceived.hasOwnProperty(key)) {
-                                                    igotthekey = key;
-                                                    myval = dataReceived[key];
-                                                    for (i = 0; i < Object.keys(dataReceived).length; i++) {
-                                                        arr[i][0] = key;
-                                                        for (v = 0; v < Object.keys(dataReceived).length; v++) ;
-                                                        arr[0][v] = myval;
-                                                    }
-
-                                                    }
-
-                                                    console.log(arr);
-                                                }
-
-
-                                            if (dataReceived != null) {
-
-                                                printResult();
                                             }
 
-
-                                });
-                                }
-
-                      function getFromColes() {
-                                    var ref = firebase.database().ref("/Coles/");
-                                    ref.once("value")
-                                        .then(function (snapshot) {
-                                            dataReceived = snapshot.child(finalSearchQuery).val();
-
-                                            for (var key in dataReceived) {
-                                                if (dataReceived.hasOwnProperty(key)) {
-                                                    igotthekey = key;
-                                                    myval = dataReceived[key];
-                                                    for (i = 0; i < Object.keys(dataReceived).length; i++) {
-                                                        ColesArray[i][0] = key;
-                                                        for (v = 0; v < Object.keys(dataReceived).length; v++) ;
-                                                            ColesArray[0][v] = myval;
-                                                    }
-
-
-                                                    }
-                                                    console.log(ColesArray);
-
-
-                                                }
-
-
-                                            if (dataReceived != null) {
-
-                                                printResult();
-                                            }
-
-                                        });
-
-                                }
-                                function getFromWoolies()
-								{
-								    console.log("Here")
-                                    var ref = firebase.database().ref("/Woolworths/");
-                                    ref.once("value")
-                                        .then(function (snapshot) {
-                                            dataReceived = snapshot.child(finalSearchQuery).val();
-
-                                            for (var key in dataReceived) {
-                                                if (dataReceived.hasOwnProperty(key)) {
-                                                    igotthekey = key;
-                                                    myval = dataReceived[key];
-                                                    for (i = 0; i < Object.keys(dataReceived).length; i++) {
-                                                        WooliesArray[i][0] = key;
-                                                        for (v = 0; v < Object.keys(dataReceived).length; v++) ;
-                                                        WooliesArray[0][v] = myval;
-                                                    }
-
-
-                                                    console.log(WooliesArray);
-                                                }
-                                            }
-
-                                            if (dataReceived != null) {
-
-                                                printResult();
-                                            }
-
-                                        });
-
-                                }
-                                function Sort() {
-
-                                }
                             </script>
-							<header class="major">
-								<h1>Grocery Hack</h1>
+                                            <!--dataReceived = snapshot.child(finalSearchQuery).val();-->
 
-							</header>
-							<h3 style="color: black;">Buy everything on one platform with confidence that you're getting them for the best price.</h3>
+                                            <!--for (var key in dataReceived) {-->
+                                                <!--if (dataReceived.hasOwnProperty(key)) {-->
+                                                    <!--myval = dataReceived[key];-->
+                                                    <!--for (i = 0; i < Object.keys(dataReceived).length; i++) {-->
+                                                        <!--AldiArray[i][0] = key;-->
+                                                        <!--for (v = 0; v < Object.keys(dataReceived).length; v++) ;-->
+                                                        <!--AldiArray[0][v] = myval;-->
+                                                    <!--}-->
+<!--//                                                    var min = AldiArray[0][1];-->
+<!--//                                                    for (i = 1; Object.keys(dataReceived).length; i++) {-->
+<!--//                                                        if (AldiArray[i][1] < min) {-->
+<!--//                                                            temp = AldiArray[i][1];-->
+<!--//                                                            AldiArray [i][1] = min;-->
+<!--//                                                        }-->
+<!--//                                                    }    AldiArray[0][1] = temp;-->
+<!--//-->
+                                                <!--}-->
+                                            <!--}-->
+
+                                        <!--});-->
+                                <!--}-->
+                                <!--function getFromColes() {-->
+                                    <!--var ref = firebase.database().ref("/Coles/");-->
+                                    <!--ref.once("value")-->
+                                        <!--.then(function (snapshot) {-->
+                                            <!--dataReceived = snapshot.child(finalSearchQuery).val();-->
+
+                                            <!--for (var key in dataReceived) {-->
+                                                <!--if (dataReceived.hasOwnProperty(key)) {-->
+                                                    <!--igotthekey = key;-->
+                                                    <!--myval = dataReceived[key];-->
+                                                    <!--for (i = 0; i < Object.keys(dataReceived).length; i++) {-->
+                                                        <!--ColesArray[i][0] = key;-->
+                                                        <!--for (v = 0; v < Object.keys(dataReceived).length; v++) ;-->
+                                                        <!--ColesArray[0][v] = myval;-->
+                                                    <!--}-->
+                                                    <!--var min = ColesArray[0][1];-->
+                                                    <!--for (i=1; Object.keys(dataReceived).length;i++)-->
+                                                    <!--{-->
+                                                        <!--if (ColesArray[i][1] < min)-->
+                                                        <!--{-->
+                                                            <!--temp = ColesArray[i][1];-->
+                                                            <!--ColesArray [i][1] = min;-->
+                                                            <!--ColesArray[0][1] = temp;-->
+                                                        <!--}-->
+                                                    <!--}-->
+                                                    <!--console.log(ColesArray);-->
+
+
+                                                <!--}-->
+                                            <!--}-->
+
+                                        <!--});-->
+
+                                <!--}-->
+                                <!--function getFromWoolies()-->
+								<!--{-->
+                                    <!--var ref = firebase.database().ref("/Woolworths/");-->
+                                    <!--ref.once("value")-->
+                                        <!--.then(function (snapshot) {-->
+                                            <!--dataReceived = snapshot.child(finalSearchQuery).val();-->
+
+                                            <!--for (var key in dataReceived) {-->
+                                                <!--if (dataReceived.hasOwnProperty(key)) {-->
+                                                    <!--igotthekey = key;-->
+                                                    <!--myval = dataReceived[key];-->
+                                                    <!--for (i = 0; i < Object.keys(dataReceived).length; i++) {-->
+                                                        <!--WooliesArray[i][0] = key;-->
+                                                        <!--for (v = 0; v < Object.keys(dataReceived).length; v++) ;-->
+                                                        <!--WooliesArray[0][v] = myval;-->
+                                                    <!--}-->
+                                                    <!--var min = WooliesArray[0][1];-->
+                                                    <!--for (i=1; Object.keys(dataReceived).length;i++)-->
+                                                    <!--{-->
+                                                        <!--if (WooliesArray[i][1] < min)-->
+                                                        <!--{-->
+                                                            <!--temp = WooliesArray[i][1];-->
+                                                            <!--WooliesArray [i][1] = min;-->
+                                                            <!--WooliesArray[0][1] = temp;-->
+                                                        <!--}-->
+                                                    <!--}-->
+
+                                                <!--}-->
+                                            <!--}-->
+
+                                        <!--});-->
+
+                                <!--}-->
+
+                            <!--</script>-->
+
+                            <script>
+                                var json = $.parseJSON(data);
+                                var keys = array();
+                                for(var key in json[16].events.burstevents){
+                                    keys.push(key)
+                                }
+
+                            </script>
+
+
+
+                            <h2 style="margin: auto">We understand your need to save a little more on your necessities to spend a little more on the ones you love.</h2>
+                            <h5>Thats why we have our state of the art engines running continuously to get real time product information and accurate prices from your favourite Coles, Aldi and Woolworths! Search your desired product here and add it to your shopping list!</h5>
                             <br>
                             <br>
 							<form id="searchBar" onsubmit="hideImages(event)"> <!--From https://stackoverflow.com/questions/13987300/how-to-trigger-enter-key-press-of-textbox-->
 								<input type="text" name="search" class="autocomplete" id="search" placeholder="Search..">
 							</form>
 
+                            <!--JS Section 2: Getting the search query-->
 							<script> // From https://stackoverflow.com/questions/2090657/how-do-i-switch-external-css-files/2090682#2090682
                             var searchObject;
                             var finalSearchQuery;
@@ -261,49 +237,33 @@
                             function hideImages(event){
                                 event.preventDefault();
                                 document.getElementById('pagestyle_css').href='assets/css/main-enter.css';
-////
-//                                var match,
-//                                    pl     = /\+/g,  // Regex for replacing addition symbol with a space
-//                                    search = /([^&=]+)=?([^&]*)/g,
-//                                    decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
-//                                    query  = window.location.search.substring(1);
-//
-//                                searchObject = {};
-//                                while (match = search.exec(query))
-//                                    searchObject[decode(match[1])] = decode(match[2]);
-//
-//                                function getsearchQuery(search) {
-//                                    return searchObject["search"];
-//                                }
-//                                // variable searchQuery is the query string
-//
-//                                var searchQuery = getsearchQuery(search);
-//                                if(searchQuery!=null) {
-//                                    finalSearchQuery = searchQuery.toLowerCase();
-//                                }
                                 searchObject = document.getElementById('search').value;
                                 finalSearchQuery = searchObject.toLowerCase();
 
-//                                //The string with search query is finalSearchQuery
+                                //The string with search query is finalSearchQuery
                                 if(finalSearchQuery!=null) {
+//                                    getDataFromAldi();
+//                                    getFromColes();
+//                                    getFromWoolies()
 
-                                    getFromColes();
-                                    getFromWoolies();
-                                    getDataFromDatabase();
+                                function repeatList(array,content) {
+                                    for (var number in array) {
+                                        var newList = $("<li><div class=\"collapsible-header active\">" + array[number] + "</div><div class=\"collapsible-body\"><span>"+ content+"</span></div></li>");
+                                        $('#items').append(newList);
+                                    }
 
                                 }
 
-                            }
+                               var testSet1 = ["Aldi: 2 kg at $5","Aldi: per piece at $0.75", "Coles: 2 kg at $9", "Coles: per piece at $0.9","Woolworths: 2 kg at $8","Woolworths: per piece at $0.9"];
+                               var testSet2 = ["Aldi: 2 kg at $5","Aldi: per piece at $0.75", "Coles: 2 kg at $9", "Coles: per piece at $0.9","Woolworths: 2 kg at $8","Woolworths: per piece at $0.9"];
+
+                               if(finalSearchQuery=="apple") {
+                                   repeatList(testSet1, "All the items are fresh and new!")
+                               }else if(finalSearchQuery=="chicken"), ""
+
+                            }}
+
 							</script>
-
-							<!--Getting the searchQuery-->
-
-							<!--<script> // From https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript-->
-                            <!--function parseSearchText(){-->
-                                <!---->
-                            <!--}-->
-							<!--</script>-->
-
 						</div>
 					</section>
 
@@ -325,20 +285,11 @@
                 $('.collapsible').collapsible();
                 });
 
-                </script>
-
-                <script>
-                function repeatList(array,b) {
-                    for (var number in array) {
-                        var newList = $("<li><div class=\"collapsible-header active\">" + array[number] + "</div><div class=\"collapsible-body\"><span>"+ b+"</span></div></li>");
-                        $('#items').append(newList);
-                    }
-                }
-
 
                 </script>
 
                 <!-- Main -->
+
 					<div id="main">
 
 						<!-- One -->
@@ -348,65 +299,39 @@
 
 									</span>
 									<header class="major">
-										<h3 style="color:white;">COLES</h3>
+										<h3>COLES</h3>
 									</header>
-
 								</article>
-
-
 								<article>
 									<span class="image">
 
 									</span>
 									<header class="major">
-										<h3 style="color:white;">WOOLWORTHS</h3>
+										<h3>WOOLWORTHS</h3>
+
 									</header>
 								</article>
-
 								<article>
 									<span class="image">
 
 									</span>
 									<header class="major">
-										<h3 style="color:white;">ALDI</h3>
+										<h3>ALDI</h3>
 
 									</header>
 								</article>
-								<!--<article>-->
-									<!--<span class="image">-->
-										<!--<img src="images/pic04.jpg" alt="" />-->
-									<!--</span>-->
-									<!--<header class="major">-->
-										<!--<h3><a href="landing.html" class="link">Ipsum</a></h3>-->
-										<!--<p>Nisl sed aliquam</p>-->
-									<!--</header>-->
-								<!--</article>-->
-								<!--<article>-->
-									<!--<span class="image">-->
-										<!--<img src="images/pic05.jpg" alt="" />-->
-									<!--</span>-->
-									<!--<header class="major">-->
-										<!--<h3><a href="landing.html" class="link">Consequat</a></h3>-->
-										<!--<p>Ipsum dolor sit amet</p>-->
-									<!--</header>-->
-								<!--</article>-->
-								<!--<article>-->
-									<!--<span class="image">-->
-										<!--<img src="images/pic06.jpg" alt="" />-->
-									<!--</span>-->
-									<!--<header class="major">-->
-										<!--<h3><a href="landing.html" class="link">Etiam</a></h3>-->
-										<!--<p>Feugiat amet tempus</p>-->
-									<!--</header>-->
-								<!--</article>-->
 							</section>
 
 						<!-- Two -->
 							<section id="two">
 								<div class="inner">
-									<h2 style="margin: auto">We understand your need to save a little more on your necessities to spend a little more on the ones you love.</h2>
-									<h5>Thats why we have our state of the art engines running continuously to get real time product information and accurate prices from your favourite Coles, Aldi and Woolworths! Search your desired product here and add it to your shopping list!</h5>
-
+									<header class="major">
+										<h2>Grocery Hack</h2>
+									</header>
+									<p>Buy everything on one platform with confidence that you're getting them for the best price.</p>
+									<ul class="actions">
+										<li><a href=#" class="button next">Get Started</a></li>
+									</ul>
 								</div>
 							</section>
 
@@ -422,7 +347,7 @@
 										<input type="text" name="name" id="name" />
 									</div>
 									<div class="field half">
-										<label for="email" >Email</label>
+										<label for="email">Email</label>
 										<input type="text" name="email" id="email" />
 									</div>
 									<div class="field">
@@ -439,21 +364,21 @@
 								<section>
 									<div class="contact-method">
 										<span class="icon alt fa-envelope"></span>
-										<h3 style="color: white">Email</h3>
+										<h3>Email</h3>
 										<a href="#">groceryhack@gmail.com</a>
 									</div>
 								</section>
 								<section>
 									<div class="contact-method">
 										<span class="icon alt fa-phone"></span>
-										<h3 style="color: white">Phone</h3>
+										<h3>Phone</h3>
 										<span>0412 345 678</span>
 									</div>
 								</section>
 								<section>
 									<div class="contact-method">
 										<span class="icon alt fa-home"></span>
-										<h3 style="color: white">Address</h3>
+										<h3>Address</h3>
 										<span>Level 7, 271 Collins St<br />
 										Melbourne VIC 3000<br />
 										Australia</span>
