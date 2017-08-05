@@ -56,7 +56,7 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<a href="index.html" class="logo"><strong>Grocery Hack</strong></a>
+						<a href="index.html" class="logo"><strong>Grocery-Hack</strong></a>
 
                         <nav>
                             <!--Sidebar-->
@@ -67,7 +67,12 @@
                             <a href="#" data-activates="slide-out" class="button-collapse" style="border: 0.5px solid #87c5b2;color: #000;background-color: #87c5a4"><i class="material-icons">shopping_cart</i></a>
 
                             <script>
-                                $(".button-collapse").sideNav();
+                                $('.button-collapse').sideNav({
+                                    menuWidth: 300, // Default is 300
+                                    edge: 'ri', // Choose the horizontal origin
+                                    closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+                                    draggable: true// Choose whether you can drag to open on touch screens,
+                                });
                             </script>
                         </nav>
 					</header>
