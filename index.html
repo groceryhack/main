@@ -108,6 +108,11 @@
                                             }
                                         });
                                 }
+
+                                function showList(){
+                                    document.getElementById('resultList').style.display= "show";
+                                }
+
                             </script>
 
 
@@ -146,6 +151,7 @@
 //                                //The string with search query is finalSearchQuery
                                 if(finalSearchQuery!=null) {
                                     getDataFromDatabase();
+                                    showList();
                                 }
                             })();
 
@@ -163,10 +169,33 @@
 
                 <script>
                     function printResult(){
-                        document.getElementById('.resultSection').innerHTML += "Result: " + dataReceived;
+                        document.getElementById('.resultSection').innerHTML =;
                     }
                 </script>
 
+                <div class="resultList">
+                    <ul class="collapsible" data-collapsible="accordion">
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+                            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+                            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+                            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <script>
+                $(document).ready(function(){
+                $('.collapsible').collapsible();
+                });
+                </script>
 
                 <!-- Main -->
 					<div id="main">

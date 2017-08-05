@@ -3968,3 +3968,8 @@ input[type=text]:focus{
 autocomplete{
     color: #000;
 }
+
+.resultList{
+	color:#000000;
+	/*display: none;*/
+}
