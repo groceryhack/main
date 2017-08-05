@@ -104,42 +104,43 @@
                                 function hideImages(e){
                                     e.preventDefault();
                                     document.getElementById('pagestyle_css').href='assets/css/main-enter.css';
+                                    parseSearchText();
                                 }
                             </script>
 
                             <!--Getting the searchQuery-->
 
                             <script> // From https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
+                            function parseSearchText(){
+                                var searchObject;
+                                var finalSearchQuery;
+                                (window.onpopstate = function () {
+                                    var match,
+                                        pl     = /\+/g,  // Regex for replacing addition symbol with a space
+                                        search = /([^&=]+)=?([^&]*)/g,
+                                        decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+                                        query  = window.location.search.substring(1);
 
-                            var searchObject;
-                            var finalSearchQuery;
-                            (window.onpopstate = function () {
-                                var match,
-                                    pl     = /\+/g,  // Regex for replacing addition symbol with a space
-                                    search = /([^&=]+)=?([^&]*)/g,
-                                    decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
-                                    query  = window.location.search.substring(1);
+                                    searchObject = {};
+                                    while (match = search.exec(query))
+                                        searchObject[decode(match[1])] = decode(match[2]);
 
-                                searchObject = {};
-                                while (match = search.exec(query))
-                                    searchObject[decode(match[1])] = decode(match[2]);
+                                    function getsearchQuery(search) {
+                                        return searchObject["search"];
+                                    }
+                                    // variable searchQuery is the query string
 
-                                function getsearchQuery(search) {
-                                    return searchObject["search"];
-                                }
-                                // variable searchQuery is the query string
-
-                                var searchQuery = getsearchQuery(search);
-                                if(searchQuery!=null) {
-                                    finalSearchQuery = searchQuery.toLowerCase();
-                                }
+                                    var searchQuery = getsearchQuery(search);
+                                    if(searchQuery!=null) {
+                                        finalSearchQuery = searchQuery.toLowerCase();
+                                    }
 
 //                                //The string with search query is finalSearchQuery
 //                                if(finalSearchQuery!=null) {
 //                                    getDataFromDatabase();
 //                                }
-                            })();
-
+                                })();
+                            }
                             </script>
 
 
@@ -255,7 +256,7 @@
 									<header class="major">
 										<h2>Massa libero</h2>
 									</header>
-									<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus.</p>
+									<p>Buy everything on one platform with confidence that you're getting them for the best price.</p>
 									<ul class="actions">
 										<li><a href="landing.html" class="button next">Get Started</a></li>
 									</ul>
