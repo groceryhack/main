@@ -3145,7 +3145,6 @@
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		background-color: #2a2f4a;
 		box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.15);
 		cursor: default;
 		font-weight: 600;
@@ -3212,7 +3211,6 @@
 				padding: 0 0.75em;
 				position: relative;
 				vertical-align: middle;
-                color: #2a2f4a;
 			}
 
 				#header nav a:last-child {
@@ -3383,16 +3381,16 @@
 		-webkit-align-items: center;
 		-ms-align-items: center;
 		align-items: center;
-        background-color: #fff;
+        background-color: #E8EAF6;
         background-image: url("/images/banner.jpg");
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
 		padding: 6em 0 2em 0 ;
-		/*background-attachment: fixed;*/
-		/*background-position: center;*/
-		/*background-repeat: no-repeat;*/
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
 		background-size: cover;
 		border-bottom: 0 !important;
 		cursor: default;
@@ -3402,6 +3400,7 @@
 		min-height: 22em;
 		position: relative;
 		top: -3.25em;
+        z-index: auto;
 	}
 
 
@@ -3420,7 +3419,7 @@
 		}
 
 			#banner > .inner .image {
-				display: none;
+		
 			}
 
 			#banner > .inner header {
