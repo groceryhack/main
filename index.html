@@ -7,25 +7,30 @@
 <html>
 	<head>
 		<title>Forty by HTML5 UP</title>
-		<meta charset="utf-8" />
+        <meta charset="utf-8" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 
         <!-- Compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
 
+
         <link rel="stylesheet" href="assets/css/main.css" />
+        <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+        <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+
+
+
+        <script
+                src="https://code.jquery.com/jquery-3.2.1.min.js"
+                integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+                crossorigin="anonymous"></script>
         <!-- Compiled and minified JavaScript -->
-        <script src="assets/js/jquery-3.2.1.min.js"></script>
-
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
 
 
-
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
 
         <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
         <script>
@@ -51,8 +56,20 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<a href="index.html" class="logo"><strong>GroceryHack</strong></a>
+						<a href="index.html" class="logo"><strong>Grocery Hack</strong></a>
 
+                        <nav>
+                            <!--Sidebar-->
+                            <ul id="slide-out" class="side-nav" >
+                                <li><a href="#!"><i class="material-icons">shopping_cart</i>My List:</a></li>
+
+                            </ul>
+                            <a href="#" data-activates="slide-out" class="button-collapse" style="border: 0.5px solid #87c5b2;color: #000;background-color: #87c5a4"><i class="material-icons">shopping_cart</i></a>
+
+                            <script>
+                                $(".button-collapse").sideNav();
+                            </script>
+                        </nav>
 					</header>
 
 				<!-- Menu -->
@@ -72,6 +89,7 @@
 				<!-- Banner -->
 					<section id="banner" class="major">
 						<div class="inner">
+
 
                             <form id="searchBar">
                                 <input type="text" name="search" class="autocomplete" id="search" placeholder="Search..">
@@ -158,7 +176,9 @@
 					</section>
 
 
-				<!-- Main -->
+
+
+                <!-- Main -->
 					<div id="main">
 
 						<!-- One -->
