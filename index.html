@@ -101,8 +101,8 @@
                             </form>
 
                             <script> // From https://stackoverflow.com/questions/2090657/how-do-i-switch-external-css-files/2090682#2090682
-                                function hideImages(e){
-                                    e.preventDefault();
+                                function hideImages(event){
+                                    event.preventDefault();
                                     document.getElementById('pagestyle_css').href='assets/css/main-enter.css';
                                     parseSearchText();
                                 }
