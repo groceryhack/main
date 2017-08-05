@@ -137,6 +137,17 @@
                                                         for (v = 0; v < Object.keys(dataReceived).length; v++) ;
                                                         arr[0][v] = myval;
                                                     }
+                                                    var min = arr[0][1]
+                                                    for (i=1; Object.keys(dataReceived).length;i++)
+                                                    {
+                                                        if (arr[i][1] < min)
+                                                        {
+                                                            temp = arr[i][1];
+                                                            arr [i][1] = min;
+                                                            arr[0][1] = temp;
+                                                        }
+                                                    }
+
                                                     console.log(arr);
                                                 }
                                             }
@@ -162,6 +173,16 @@
                                                         ColesArray[i][0] = key;
                                                         for (v = 0; v < Object.keys(dataReceived).length; v++) ;
                                                         ColesArray[0][v] = myval;
+                                                    }
+                                                    var min = ColesArray[0][1]
+                                                    for (i=1; Object.keys(dataReceived).length;i++)
+                                                    {
+                                                        if (ColesArray[i][1] < min)
+                                                        {
+                                                            temp = ColesArray[i][1];
+                                                            ColesArray [i][1] = min;
+                                                            ColesArray[0][1] = temp;
+                                                        }
                                                     }
                                                     console.log(ColesArray);
                                                 }
@@ -191,7 +212,17 @@
                                                         for (v = 0; v < Object.keys(dataReceived).length; v++) ;
                                                         WooliesArray[0][v] = myval;
                                                     }
-                                                    console.log(ColesArray);
+                                                    var min = WooliesArray[0][1]
+                                                    for (i=1; Object.keys(dataReceived).length;i++)
+                                                    {
+                                                        if (WooliesArray[i][1] < min)
+                                                        {
+                                                            temp = WooliesArray[i][1];
+                                                            WooliesArray [i][1] = min;
+                                                            WooliesArray[0][1] = temp;
+                                                        }
+                                                    }
+                                                    console.log(WooliesArray);
                                                 }
                                             }
 
