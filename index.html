@@ -16,9 +16,14 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
+
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+
+        <link rel="stylesheet" href="assets/css/main.css" />
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
 
         <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
         <script>
@@ -33,6 +38,16 @@
             };
             firebase.initializeApp(config);
         </script>
+
+        <!--<script>-->
+            <!--window.onload = function(){-->
+                <!--if(window.jQuery){-->
+                    <!--alert("Yeah");-->
+                <!--}else{-->
+                    <!--alert("No");-->
+                <!--}-->
+            <!--}-->
+        <!--</script>-->
 
 	</head>
 	<body>
@@ -49,13 +64,25 @@
 				<!-- Menu -->
 					<nav id="menu">
 						<ul class="links">
-							<li><a href="index.html">Hom</a></li>
+							<li><a href="index.html">Home</a></li>
 						</ul>
 						<ul class="actions vertical">
 							<li><a href="#" class="button special fit">Get Started</a></li>
 							<li><a href="#" class="button fit">Log In</a></li>
 						</ul>
 					</nav>
+
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal bottom-sheet">
+                    <div class="modal-content">
+                        <h4>Modal Header</h4>
+                        <p>A bunch of text</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                    </div>
+                </div>
+
 
 				<!-- Banner -->
 					<section id="banner" class="major">
@@ -92,11 +119,12 @@
                                 if(searchQuery!=null) {
                                     finalSearchQuery = searchQuery.toLowerCase();
                                 }
+
 //                                //The string with search query is finalSearchQuery
 //                                if(finalSearchQuery!=null) {
 //                                    getDataFromDatabase();
 //                                }
-//                            })();
+                            })();
 
                             </script>
 
