@@ -132,56 +132,50 @@
                                 }
 
                                 //The string with search query is finalSearchQuery
-                                if (finalSearchQuery != null) {
-                                    getDataFromDatabase();
-                                }
-                                $('#main').replaceWith("We got this. Trust me.");
+//                                if (finalSearchQuery != null) {
+//                                    getDataFromDatabase();
+//                                }
                             });
 
                             </script>
 
-							<script>
-
-							</script>
-
-
                             <script>
 //                                //Getting the search retrieval
 
-                                var dataReceivedFromAldi;
-                                var dataReceivedFromColes;
-                                var dataReceivedFromWool;
-                                var storeList = [];
-
-                                function getDataFromDatabase() {
-                                    var refAldi = firebase.database().ref("/Aldi/fruits/");
-                                    refAldi.once("value")
-                                        .then(function (snapshot) {
-                                            dataReceivedFromAldi = snapshot.child(finalSearchQuery).val();
-                                            dataReceivedFromAldi = parseFloat(dataReceivedFromAldi);
-                                            storeList.push(dataReceivedFromAldi);
-                                            testPrintAldi();
-                                        });
-
-                                    var refColes = firebase.database().ref("/Coles/meat");
-                                    refColes.once("value")
-                                        .then(function (snapshot) {
-                                            dataReceivedFromColes = snapshot.child(finalSearchQuery).val();
-                                            dataReceivedFromColes = parseFloat(dataReceivedFromColes);
-                                            storeList.push(dataReceivedFromColes);
-                                            testPrintColes();
-                                        });
-
-                                    var refWool = firebase.database().ref("/Woolworths/");
-                                    refWool.once("value")
-                                        .then(function (snapshot) {
-                                            dataReceivedFromWool = snapshot.child(finalSearchQuery).val();
-                                            dataReceivedFromWool = parseFloat(dataReceivedFromWool);
-                                            storeList.push(dataReceivedFromWool);
-                                            testPrintWool();
-                                        });
-                                    storeList.sort();
-                                }
+//                                var dataReceivedFromAldi;
+//                                var dataReceivedFromColes;
+//                                var dataReceivedFromWool;
+//                                var storeList = [];
+//
+//                                function getDataFromDatabase() {
+//                                    var refAldi = firebase.database().ref("/Aldi/fruits/");
+//                                    refAldi.once("value")
+//                                        .then(function (snapshot) {
+//                                            dataReceivedFromAldi = snapshot.child(finalSearchQuery).val();
+//                                            dataReceivedFromAldi = parseFloat(dataReceivedFromAldi);
+//                                            storeList.push(dataReceivedFromAldi);
+//                                            testPrintAldi();
+//                                        });
+//
+//                                    var refColes = firebase.database().ref("/Coles/meat");
+//                                    refColes.once("value")
+//                                        .then(function (snapshot) {
+//                                            dataReceivedFromColes = snapshot.child(finalSearchQuery).val();
+//                                            dataReceivedFromColes = parseFloat(dataReceivedFromColes);
+//                                            storeList.push(dataReceivedFromColes);
+//                                            testPrintColes();
+//                                        });
+//
+//                                    var refWool = firebase.database().ref("/Woolworths/");
+//                                    refWool.once("value")
+//                                        .then(function (snapshot) {
+//                                            dataReceivedFromWool = snapshot.child(finalSearchQuery).val();
+//                                            dataReceivedFromWool = parseFloat(dataReceivedFromWool);
+//                                            storeList.push(dataReceivedFromWool);
+//                                            testPrintWool();
+//                                        });
+//                                    storeList.sort();
+//                                }
 
                             </script>
 
@@ -202,7 +196,7 @@
 									</span>
 									<header class="major">
 										<h3>COLES</h3>
-										<img src="coles"
+										<!--<img src="coles">-->
 									</header>
 								</article>
 								<article>
