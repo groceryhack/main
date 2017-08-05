@@ -3969,3 +3969,7 @@ input[type=text]:focus{
 autocomplete{
     color: #000;
 }
+
+.resultList{
+	display: block;
+}
