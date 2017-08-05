@@ -5,241 +5,220 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-<head>
-    <title>Grocery Hack</title>
-    <meta charset="utf-8"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<head>
+		<title>Grocery Hack</title>
+        <meta charset="utf-8" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <!--[if lte IE 8]>
-    <script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
-
-
-    <link id="pagestyle_css" rel="stylesheet" href="assets/css/main.css"/>
-    <!--[if lte IE 9]>
-    <link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
-    <!--[if lte IE 8]>
-    <link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
 
 
-    <script
-            src="https://code.jquery.com/jquery-3.2.1.min.js"
-            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-            crossorigin="anonymous"></script>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+        <link id="pagestyle_css" rel="stylesheet" href="assets/css/main.css" />
+        <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+        <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 
 
-    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyBDzDAMUTJgVfruhxhvAx4DL1i4MLJUxHc",
-            authDomain: "hackathon-database-7838b.firebaseapp.com",
-            databaseURL: "https://hackathon-database-7838b.firebaseio.com",
-            projectId: "hackathon-database-7838b",
-            storageBucket: "",
-            messagingSenderId: "857218536641"
-        };
-        firebase.initializeApp(config);
-    </script>
+
+        <script
+                src="https://code.jquery.com/jquery-3.2.1.min.js"
+                integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+                crossorigin="anonymous"></script>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
 
 
-</head>
-<body>
 
-<!-- Wrapper -->
-<div id="wrapper">
-
-    <!-- Header -->
-    <header id="header" class="alt">
-        <a href="index.html" class="logo"><strong>Grocery-Hack</strong></a>
-
-        <nav>
-            <!--Sidebar-->
-            <ul id="slide-out" class="side-nav">
-                <li><a href="#!"><i class="material-icons">clear</i>My Cart:</a></li>
-
-                <table style="color:black">
-                    <tr style="background-color: #4CAF50; color: white">
-                        <th>Item</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Subtotal</th>
-                    </tr>
-                    <tr>
-                        <td>Apple</td>
-                        <td>2</td>
-                        <td>5</td>
-                        <td>10</td>
-                    </tr>
-                    <tr>
-                        <td>Beef</td>
-                        <td>5</td>
-                        <td>10</td>
-                        <td>50</td>
-                    </tr>
-
-                </table>
-
-            </ul>
-            <a href="#" data-activates="slide-out" class="button-collapse"
-               style="border: 0.5px solid #4CAF50;color: #000;background-color: #4CAF50"><i class="material-icons">shopping_cart</i></a>
-
-            <script>
-                $('.button-collapse').sideNav({
-                    menuWidth: 400, // Default is 300
-                    edge: 'ri', // Choose the horizontal origin
-                    closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
-                    draggable: true// Choose whether you can drag to open on touch screens,
-                });
-            </script>
-        </nav>
-    </header>
-
-    <!-- Menu -->
-    <nav id="menu">
-        <ul class="links">
-            <li><a href="index.html">Home</a></li>
-        </ul>
-        <ul class="actions vertical">
-            <li><a href="#" class="button special fit">Get Started</a></li>
-            <li><a href="#" class="button fit">Log In</a></li>
-        </ul>
-    </nav>
+        <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyBDzDAMUTJgVfruhxhvAx4DL1i4MLJUxHc",
+                authDomain: "hackathon-database-7838b.firebaseapp.com",
+                databaseURL: "https://hackathon-database-7838b.firebaseio.com",
+                projectId: "hackathon-database-7838b",
+                storageBucket: "",
+                messagingSenderId: "857218536641"
+            };
+            firebase.initializeApp(config);
+        </script>
 
 
-    <!-- Banner -->
-    <section id="banner" class="major">
-        <div class="inner">
 
-            <script>
-                //Getting the search retrieval
-                //                                var dataReceived;
-                //                                function getDataFromDatabase() {
-                //                                    var ref = firebase.database().ref("/Aldi/");
-                //                                    ref.once("value")
-                //                                        .then(function (snapshot) {
-                //                                            dataReceived = snapshot.child(finalSearchQuery).val();
-                //                                            if (dataReceived!=null) {
-                //                                                printResult();
-                //                                            }
-                //                                        });
-                //                                }
-                //
-                //                                function showList(){
-                //                                    document.getElementById('resultList').style.display= "show";
-                //                                }
+	</head>
+	<body>
 
-                //Getting the search retrieval
-                var dataReceived;
-                var igotthekey;
-                var myval;
-                var arr = [[], []];
-                var ColesArray = [[], []];
-                var WooliesArray = [[], []];
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<a href="index.html" class="logo"><strong>Grocery-Hack</strong></a>
+
+                        <nav>
+                            <!--Sidebar-->
+                            <ul id="slide-out" class="side-nav" >
+                                <li><a href="#!"><i class="material-icons">clear</i>My List:</a></li>
+
+                            </ul>
+                            <a href="#" data-activates="slide-out" class="button-collapse" style="border: 0.5px solid #87c5b2;color: #000;background-color: #87c5a4"><i class="material-icons">shopping_cart</i></a>
+
+                            <script>
+                                $('.button-collapse').sideNav({
+                                    menuWidth: 400, // Default is 300
+                                    edge: 'ri', // Choose the horizontal origin
+                                    closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+                                    draggable: true// Choose whether you can drag to open on touch screens,
+                                });
+                            </script>
+                        </nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+						</ul>
+						<ul class="actions vertical">
+							<li><a href="#" class="button special fit">Get Started</a></li>
+							<li><a href="#" class="button fit">Log In</a></li>
+						</ul>
+					</nav>
 
 
-                function getDataFromDatabase() {
-                    var ref = firebase.database().ref("/Aldi/");
-                    ref.once("value")
-                        .then(function (snapshot) {
-                            dataReceived = snapshot.child(finalSearchQuery).val();
 
-                            for (var key in dataReceived) {
-                                if (dataReceived.hasOwnProperty(key)) {
-                                    igotthekey = key;
-                                    myval = dataReceived[key];
-                                    for (i = 0; i < Object.keys(dataReceived).length; i++) {
-                                        arr[i][0] = key;
-                                        for (v = 0; v < Object.keys(dataReceived).length; v++) ;
-                                        arr[0][v] = myval;
-                                    }
-                                    console.log(arr);
+
+				<!-- Banner -->
+					<section id="banner" class="major">
+						<div class="inner">
+
+                            <script>
+                                //Getting the search retrieval
+//                                var dataReceived;
+//                                function getDataFromDatabase() {
+//                                    var ref = firebase.database().ref("/Aldi/");
+//                                    ref.once("value")
+//                                        .then(function (snapshot) {
+//                                            dataReceived = snapshot.child(finalSearchQuery).val();
+//                                            if (dataReceived!=null) {
+//                                                printResult();
+//                                            }
+//                                        });
+//                                }
+//
+//                                function showList(){
+//                                    document.getElementById('resultList').style.display= "show";
+//                                }
+
+                                //Getting the search retrieval
+                                var dataReceived;
+                                var igotthekey;
+                                var myval;
+                                var arr = [[], []];
+                                var ColesArray = [[], []];
+                                var WooliesArray = [[], []];
+
+
+                                function getDataFromDatabase() {
+                                    var ref = firebase.database().ref("/Aldi/");
+                                    ref.once("value")
+                                        .then(function (snapshot) {
+                                            dataReceived = snapshot.child(finalSearchQuery).val();
+
+                                            for (var key in dataReceived) {
+                                                if (dataReceived.hasOwnProperty(key)) {
+                                                    igotthekey = key;
+                                                    myval = dataReceived[key];
+                                                    for (i = 0; i < Object.keys(dataReceived).length; i++) {
+                                                        arr[i][0] = key;
+                                                        for (v = 0; v < Object.keys(dataReceived).length; v++) ;
+                                                        arr[0][v] = myval;
+                                                    }
+                                                    console.log(arr);
+                                                }
+                                            }
+
+                                            if (dataReceived != null) {
+
+                                                printResult();
+                                            }
+
+                                        });
                                 }
-                            }
+                                function getFromColes() {
+                                    var ref = firebase.database().ref("/Coles/");
+                                    ref.once("value")
+                                        .then(function (snapshot) {
+                                            dataReceived = snapshot.child(finalSearchQuery).val();
 
-                            if (dataReceived != null) {
+                                            for (var key in dataReceived) {
+                                                if (dataReceived.hasOwnProperty(key)) {
+                                                    igotthekey = key;
+                                                    myval = dataReceived[key];
+                                                    for (i = 0; i < Object.keys(dataReceived).length; i++) {
+                                                        ColesArray[i][0] = key;
+                                                        for (v = 0; v < Object.keys(dataReceived).length; v++) ;
+                                                        ColesArray[0][v] = myval;
+                                                    }
+                                                    console.log(ColesArray);
+                                                }
+                                            }
 
-                                printResult();
-                            }
+                                            if (dataReceived != null) {
 
-                        });
-                }
+                                                printResult();
+                                            }
 
-                function getFromColes() {
-                    var ref = firebase.database().ref("/Coles/");
-                    ref.once("value")
-                        .then(function (snapshot) {
-                            dataReceived = snapshot.child(finalSearchQuery).val();
+                                        });
 
-                            for (var key in dataReceived) {
-                                if (dataReceived.hasOwnProperty(key)) {
-                                    igotthekey = key;
-                                    myval = dataReceived[key];
-                                    for (i = 0; i < Object.keys(dataReceived).length; i++) {
-                                        ColesArray[i][0] = key;
-                                        for (v = 0; v < Object.keys(dataReceived).length; v++) ;
-                                        ColesArray[0][v] = myval;
-                                    }
-                                    console.log(ColesArray);
                                 }
-                            }
+                                function getFromWoolies()
+								{
+                                    var ref = firebase.database().ref("/Coles/");
+                                    ref.once("value")
+                                        .then(function (snapshot) {
+                                            dataReceived = snapshot.child(finalSearchQuery).val();
 
-                            if (dataReceived != null) {
+                                            for (var key in dataReceived) {
+                                                if (dataReceived.hasOwnProperty(key)) {
+                                                    igotthekey = key;
+                                                    myval = dataReceived[key];
+                                                    for (i = 0; i < Object.keys(dataReceived).length; i++) {
+                                                        WooliesArray[i][0] = key;
+                                                        for (v = 0; v < Object.keys(dataReceived).length; v++) ;
+                                                        WooliesArray[0][v] = myval;
+                                                    }
+                                                    console.log(ColesArray);
+                                                }
+                                            }
 
-                                printResult();
-                            }
+                                            if (dataReceived != null) {
 
-                        });
+                                                printResult();
+                                            }
 
-                }
+                                        });
 
-                function getFromWoolies() {
-                    var ref = firebase.database().ref("/Coles/");
-                    ref.once("value")
-                        .then(function (snapshot) {
-                            dataReceived = snapshot.child(finalSearchQuery).val();
-
-                            for (var key in dataReceived) {
-                                if (dataReceived.hasOwnProperty(key)) {
-                                    igotthekey = key;
-                                    myval = dataReceived[key];
-                                    for (i = 0; i < Object.keys(dataReceived).length; i++) {
-                                        WooliesArray[i][0] = key;
-                                        for (v = 0; v < Object.keys(dataReceived).length; v++) ;
-                                        WooliesArray[0][v] = myval;
-                                    }
-                                    console.log(ColesArray);
                                 }
-                            }
+                            </script>
+                            <h2 style="margin: auto">We understand your need to save a little more on your necessities to spend a little more on the ones you love.</h2>
+                            <h5>Thats why we have our state of the art engines running continuously to get real time product information and accurate prices from your favourite Coles, Aldi and Woolworths!</h5>
+                            <br>
+                            <br>
+							<form id="searchBar" onsubmit="hideImages(event)"> <!--From https://stackoverflow.com/questions/13987300/how-to-trigger-enter-key-press-of-textbox-->
+								<input type="text" name="search" class="autocomplete" id="search" placeholder="Search..">
+							</form>
 
-                            if (dataReceived != null) {
+							<script> // From https://stackoverflow.com/questions/2090657/how-do-i-switch-external-css-files/2090682#2090682
+                            var searchObject;
+                            var finalSearchQuery;
 
-                                printResult();
-                            }
-
-                        });
-
-                }
-            </script>
-
-
-            <form id="searchBar" onsubmit="hideImages(event)">
-                <!--From https://stackoverflow.com/questions/13987300/how-to-trigger-enter-key-press-of-textbox-->
-                <input type="text" name="search" class="autocomplete" id="search" placeholder="Search..">
-            </form>
-
-            <script> // From https://stackoverflow.com/questions/2090657/how-do-i-switch-external-css-files/2090682#2090682
-            var searchObject;
-            var finalSearchQuery;
-
-            function hideImages(event) {
-                event.preventDefault();
-                document.getElementById('pagestyle_css').href = 'assets/css/main-enter.css';
+                            function hideImages(event){
+                                event.preventDefault();
+                                document.getElementById('pagestyle_css').href='assets/css/main-enter.css';
 ////
 //                                var match,
 //                                    pl     = /\+/g,  // Regex for replacing addition symbol with a space
@@ -260,211 +239,209 @@
 //                                if(searchQuery!=null) {
 //                                    finalSearchQuery = searchQuery.toLowerCase();
 //                                }
-                searchObject = document.getElementById('search').value;
-                finalSearchQuery = searchObject.toLowerCase();
+                                searchObject = document.getElementById('search').value;
+                                finalSearchQuery = searchObject.toLowerCase();
 
 //                                //The string with search query is finalSearchQuery
-                if (finalSearchQuery != null) {
-                    getDataFromDatabase();
-                    getFromColes;
-                    getFromWoolies;
+                                if(finalSearchQuery!=null) {
+                                    getDataFromDatabase();
+                                    getFromColes;
+                                    getFromWoolies;
 
-                }
+                                }
 
-            }
-            </script>
+                            }
+							</script>
 
-            <!--Getting the searchQuery-->
+							<!--Getting the searchQuery-->
 
-            <!--<script> // From https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript-->
-            <!--function parseSearchText(){-->
-            <!---->
-            <!--}-->
-            <!--</script>-->
+							<!--<script> // From https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript-->
+                            <!--function parseSearchText(){-->
+                                <!---->
+                            <!--}-->
+							<!--</script>-->
 
-        </div>
-    </section>
+						</div>
+					</section>
 
 
-    <div class="resultList">
-        <p>The items are available at:</p>
-        <ul class="collapsible popout" data-collapsible="expandable">
-            <li>
-                <div class="collapsible-header">First</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-                <div class="collapsible-header">Second</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-                <div class="collapsible-header">Third</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-        </ul>
-
-    </div>
-
-    <script>
-        $(document).ready(function () {
-            $('.collapsible').collapsible();
-        });
-    </script>
-
-    <!-- Main -->
-    <div id="main">
-
-        <!-- One -->
-        <section id="one" class="tiles">
-            <article>
-									<span class="image">
-
-									</span>
-                <header class="major">
-                    <h3>COLES</h3>
-                </header>
-            </article>
-            <article>
-									<span class="image">
-
-									</span>
-                <header class="major">
-                    <h3>WOOLWORTHS</h3>
-
-                </header>
-            </article>
-            <article>
-									<span class="image">
-
-									</span>
-                <header class="major">
-                    <h3>ALDI</h3>
-
-                </header>
-            </article>
-            <!--<article>-->
-            <!--<span class="image">-->
-            <!--<img src="images/pic04.jpg" alt="" />-->
-            <!--</span>-->
-            <!--<header class="major">-->
-            <!--<h3><a href="landing.html" class="link">Ipsum</a></h3>-->
-            <!--<p>Nisl sed aliquam</p>-->
-            <!--</header>-->
-            <!--</article>-->
-            <!--<article>-->
-            <!--<span class="image">-->
-            <!--<img src="images/pic05.jpg" alt="" />-->
-            <!--</span>-->
-            <!--<header class="major">-->
-            <!--<h3><a href="landing.html" class="link">Consequat</a></h3>-->
-            <!--<p>Ipsum dolor sit amet</p>-->
-            <!--</header>-->
-            <!--</article>-->
-            <!--<article>-->
-            <!--<span class="image">-->
-            <!--<img src="images/pic06.jpg" alt="" />-->
-            <!--</span>-->
-            <!--<header class="major">-->
-            <!--<h3><a href="landing.html" class="link">Etiam</a></h3>-->
-            <!--<p>Feugiat amet tempus</p>-->
-            <!--</header>-->
-            <!--</article>-->
-        </section>
-
-        <!-- Two -->
-        <section id="two">
-            <div class="inner">
-                <header class="major">
-                    <h2>Grocery Hack</h2>
-                </header>
-                <p>Buy everything on one platform with confidence that you're getting them for the best price.</p>
-                <ul class="actions">
-                    <li><a href="landing.html" class="button next">Get Started</a></li>
-                </ul>
-            </div>
-        </section>
-
-    </div>
-
-    <!-- Contact -->
-    <section id="contact">
-        <div class="inner">
-            <section>
-                <form method="post" action="#">
-                    <div class="field half first">
-                        <label for="name">Name</label>
-                        <input type="text" name="name" id="name"/>
-                    </div>
-                    <div class="field half">
-                        <label for="email">Email</label>
-                        <input type="text" name="email" id="email"/>
-                    </div>
-                    <div class="field">
-                        <label for="message">Message</label>
-                        <textarea name="message" id="message" rows="6"></textarea>
-                    </div>
-                    <ul class="actions">
-                        <li><input type="submit" value="Send Message" class="special"/></li>
-                        <li><input type="reset" value="Clear"/></li>
+                <div class="resultList">
+                    <p>The items are available at:</p>
+                    <ul class="collapsible popout" data-collapsible="expandable">
+                        <li>
+                            <div class="collapsible-header active">First</div>
+                            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header active">Second</div>
+                            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header active">Third</div>
+                            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                        </li>
                     </ul>
-                </form>
-            </section>
-            <section class="split">
-                <section>
-                    <div class="contact-method">
-                        <span class="icon alt fa-envelope"></span>
-                        <h3>Email</h3>
-                        <a href="#">groceryhack@gmail.com</a>
-                    </div>
-                </section>
-                <section>
-                    <div class="contact-method">
-                        <span class="icon alt fa-phone"></span>
-                        <h3>Phone</h3>
-                        <span>0412 345 678</span>
-                    </div>
-                </section>
-                <section>
-                    <div class="contact-method">
-                        <span class="icon alt fa-home"></span>
-                        <h3>Address</h3>
-                        <span>Level 7, 271 Collins St<br/>
-										Melbourne VIC 3000<br/>
+
+                </div>
+
+                <script>
+                $(document).ready(function(){
+                $('.collapsible').collapsible();
+                });
+                </script>
+
+                <!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+							<section id="one" class="tiles">
+								<article>
+									<span class="image">
+
+									</span>
+									<header class="major">
+										<h3>COLES</h3>
+									</header>
+								</article>
+								<article>
+									<span class="image">
+
+									</span>
+									<header class="major">
+										<h3>WOOLWORTHS</h3>
+
+									</header>
+								</article>
+								<article>
+									<span class="image">
+
+									</span>
+									<header class="major">
+										<h3>ALDI</h3>
+
+									</header>
+								</article>
+								<!--<article>-->
+									<!--<span class="image">-->
+										<!--<img src="images/pic04.jpg" alt="" />-->
+									<!--</span>-->
+									<!--<header class="major">-->
+										<!--<h3><a href="landing.html" class="link">Ipsum</a></h3>-->
+										<!--<p>Nisl sed aliquam</p>-->
+									<!--</header>-->
+								<!--</article>-->
+								<!--<article>-->
+									<!--<span class="image">-->
+										<!--<img src="images/pic05.jpg" alt="" />-->
+									<!--</span>-->
+									<!--<header class="major">-->
+										<!--<h3><a href="landing.html" class="link">Consequat</a></h3>-->
+										<!--<p>Ipsum dolor sit amet</p>-->
+									<!--</header>-->
+								<!--</article>-->
+								<!--<article>-->
+									<!--<span class="image">-->
+										<!--<img src="images/pic06.jpg" alt="" />-->
+									<!--</span>-->
+									<!--<header class="major">-->
+										<!--<h3><a href="landing.html" class="link">Etiam</a></h3>-->
+										<!--<p>Feugiat amet tempus</p>-->
+									<!--</header>-->
+								<!--</article>-->
+							</section>
+
+						<!-- Two -->
+							<section id="two">
+								<div class="inner">
+									<header class="major">
+										<h2>Grocery Hack</h2>
+									</header>
+									<p>Buy everything on one platform with confidence that you're getting them for the best price.</p>
+									<ul class="actions">
+										<li><a href="landing.html" class="button next">Get Started</a></li>
+									</ul>
+								</div>
+							</section>
+
+					</div>
+
+				<!-- Contact -->
+					<section id="contact">
+						<div class="inner">
+							<section>
+								<form method="post" action="#">
+									<div class="field half first">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field half">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="6"></textarea>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="special" /></li>
+										<li><input type="reset" value="Clear" /></li>
+									</ul>
+								</form>
+							</section>
+							<section class="split">
+								<section>
+									<div class="contact-method">
+										<span class="icon alt fa-envelope"></span>
+										<h3>Email</h3>
+										<a href="#">groceryhack@gmail.com</a>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon alt fa-phone"></span>
+										<h3>Phone</h3>
+										<span>0412 345 678</span>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon alt fa-home"></span>
+										<h3>Address</h3>
+										<span>Level 7, 271 Collins St<br />
+										Melbourne VIC 3000<br />
 										Australia</span>
-                    </div>
-                </section>
-            </section>
-        </div>
-    </section>
+									</div>
+								</section>
+							</section>
+						</div>
+					</section>
 
-    <!-- Footer -->
-    <footer id="footer">
-        <div class="inner">
-            <ul class="icons">
-                <li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-                <li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-                <li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-                <li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-                <li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-            </ul>
-            <ul class="copyright">
-                <li>&copy; Grocery Hack</li>
-                <li>Design: <a href="https://groceryhack.github.io/main/">Grocery Hack</a></li>
-            </ul>
-        </div>
-    </footer>
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Grocery Hack</li><li>Design: <a href="https://groceryhack.github.io/main/">Grocery Hack</a></li>
+							</ul>
+						</div>
+					</footer>
 
-</div>
+			</div>
 
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/jquery.scrollex.min.js"></script>
-<script src="assets/js/skel.min.js"></script>
-<script src="assets/js/util.js"></script>
-<!--[if lte IE 8]>
-<script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="assets/js/main.js"></script>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
 
-</body>
+	</body>
 </html>
