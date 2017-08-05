@@ -109,10 +109,12 @@
                             var finalSearchQuery;
                             (window.onpopstate = function () {
                                 var match,
-                                    pl     = /\+/g,  // Regex for replacing addition symbol with a space
+                                    pl = /\+/g,  // Regex for replacing addition symbol with a space
                                     search = /([^&=]+)=?([^&]*)/g,
-                                    decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
-                                    query  = window.location.search.substring(1);
+                                    decode = function (s) {
+                                        return decodeURIComponent(s.replace(pl, " "));
+                                    },
+                                    query = window.location.search.substring(1);
 
                                 searchObject = {};
                                 while (match = search.exec(query))
@@ -121,18 +123,20 @@
                                 function getsearchQuery(search) {
                                     return searchObject["search"];
                                 }
-                                // variable searchQuery is the query string
+
+                                // Variable searchQuery is the query string
 
                                 var searchQuery = getsearchQuery(search);
-                                if(searchQuery!=null) {
+                                if (searchQuery != null) {
                                     finalSearchQuery = searchQuery.toLowerCase();
                                 }
 
-//                                //The string with search query is finalSearchQuery
-//                                if(finalSearchQuery!=null) {
-//                                    getDataFromDatabase();
-//                                }
-                            })();
+                                //The string with search query is finalSearchQuery
+                                if (finalSearchQuery != null) {
+                                    getDataFromDatabase();
+                                }
+                                $('#main').replaceWith("We got this. Trust me.");
+                            });
 
                             </script>
 
@@ -143,41 +147,41 @@
 
                             <script>
 //                                //Getting the search retrieval
-//
-//                                var dataReceivedFromAldi;
-//                                var dataReceivedFromColes;
-//                                var dataReceivedFromWool;
-//                                var storeList = [];
-//
-//                                function getDataFromDatabase() {
-//                                    var refAldi = firebase.database().ref("/Aldi/fruits/");
-//                                    refAldi.once("value")
-//                                        .then(function (snapshot) {
-//                                            dataReceivedFromAldi = snapshot.child(finalSearchQuery).val();
-//                                            dataReceivedFromAldi = parseFloat(dataReceivedFromAldi);
-//                                            storeList.push(dataReceivedFromAldi);
-//                                            testPrintAldi();
-//                                        });
-//
-//                                    var refColes = firebase.database().ref("/Coles/meat");
-//                                    refColes.once("value")
-//                                        .then(function (snapshot) {
-//                                            dataReceivedFromColes = snapshot.child(finalSearchQuery).val();
-//                                            dataReceivedFromColes = parseFloat(dataReceivedFromColes);
-//                                            storeList.push(dataReceivedFromColes);
-//                                            testPrintColes();
-//                                        });
-//
-//                                    var refWool = firebase.database().ref("/Woolworths/");
-//                                    refWool.once("value")
-//                                        .then(function (snapshot) {
-//                                            dataReceivedFromWool = snapshot.child(finalSearchQuery).val();
-//                                            dataReceivedFromWool = parseFloat(dataReceivedFromWool);
-//                                            storeList.push(dataReceivedFromWool);
-//                                            testPrintWool();
-//                                        });
-//                                    storeList.sort();
-//                                }
+
+                                var dataReceivedFromAldi;
+                                var dataReceivedFromColes;
+                                var dataReceivedFromWool;
+                                var storeList = [];
+
+                                function getDataFromDatabase() {
+                                    var refAldi = firebase.database().ref("/Aldi/fruits/");
+                                    refAldi.once("value")
+                                        .then(function (snapshot) {
+                                            dataReceivedFromAldi = snapshot.child(finalSearchQuery).val();
+                                            dataReceivedFromAldi = parseFloat(dataReceivedFromAldi);
+                                            storeList.push(dataReceivedFromAldi);
+                                            testPrintAldi();
+                                        });
+
+                                    var refColes = firebase.database().ref("/Coles/meat");
+                                    refColes.once("value")
+                                        .then(function (snapshot) {
+                                            dataReceivedFromColes = snapshot.child(finalSearchQuery).val();
+                                            dataReceivedFromColes = parseFloat(dataReceivedFromColes);
+                                            storeList.push(dataReceivedFromColes);
+                                            testPrintColes();
+                                        });
+
+                                    var refWool = firebase.database().ref("/Woolworths/");
+                                    refWool.once("value")
+                                        .then(function (snapshot) {
+                                            dataReceivedFromWool = snapshot.child(finalSearchQuery).val();
+                                            dataReceivedFromWool = parseFloat(dataReceivedFromWool);
+                                            storeList.push(dataReceivedFromWool);
+                                            testPrintWool();
+                                        });
+                                    storeList.sort();
+                                }
 
                             </script>
 
@@ -262,6 +266,13 @@
 							</section>
 
 					</div>
+
+                <!--<script>-->
+                    <!--(window.onpopstate() = function () {-->
+                        <!--$('.main').replaceWith("We got this. Trust me.")-->
+                    <!--})-->
+                <!--</script>-->
+
 
 				<!-- Contact -->
 					<section id="contact">
