@@ -211,7 +211,7 @@
                                 function getFromWoolies()
 								{
 								    console.log("Here")
-                                    var ref = firebase.database().ref("/Coles/");
+                                    var ref = firebase.database().ref("/Woolworths/");
                                     ref.once("value")
                                         .then(function (snapshot) {
                                             dataReceived = snapshot.child(finalSearchQuery).val();
