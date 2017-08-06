@@ -63,6 +63,28 @@
                             <ul id="slide-out" class="side-nav" >
                                 <li><a href="#!"><i class="material-icons">clear</i>My List:</a></li>
 
+                                <table style="color:black">
+                                    <tr style="background-color: #4CAF50; color: white">
+                                        <th>Item</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                        <th>Subtotal</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Apple</td>
+                                        <td>2</td>
+                                        <td>5</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Beef</td>
+                                        <td>5</td>
+                                        <td>10</td>
+                                        <td>50</td>
+                                    </tr>
+
+                                </table>
+
                             </ul>
                             <a href="#" data-activates="slide-out" class="button-collapse" style="border: 0.5px solid #87c5b2;color: #000;background-color: #87c5a4"><i class="material-icons">shopping_cart</i></a>
 
@@ -123,6 +145,7 @@
 
 
                                 function getDataFromDatabase() {
+
                                     var ref = firebase.database().ref("/Aldi/");
                                     ref.once("value")
                                         .then(function (snapshot) {
@@ -137,29 +160,23 @@
                                                         for (v = 0; v < Object.keys(dataReceived).length; v++) ;
                                                         arr[0][v] = myval;
                                                     }
-                                                    var min = arr[0][1]
-                                                    for (i=1; Object.keys(dataReceived).length;i++)
-                                                    {
-                                                        if (arr[i][1] < min)
-                                                        {
-                                                            temp = arr[i][1];
-                                                            arr [i][1] = min;
-                                                            arr[0][1] = temp;
-                                                        }
+
                                                     }
 
                                                     console.log(arr);
                                                 }
-                                            }
+
 
                                             if (dataReceived != null) {
 
                                                 printResult();
                                             }
 
-                                        });
+
+                                });
                                 }
-                                function getFromColes() {
+
+                      function getFromColes() {
                                     var ref = firebase.database().ref("/Coles/");
                                     ref.once("value")
                                         .then(function (snapshot) {
@@ -172,28 +189,20 @@
                                                     for (i = 0; i < Object.keys(dataReceived).length; i++) {
                                                         ColesArray[i][0] = key;
                                                         for (v = 0; v < Object.keys(dataReceived).length; v++) ;
-                                                        ColesArray[0][v] = myval;
+                                                            ColesArray[0][v] = myval;
                                                     }
-                                                    var min = ColesArray[0][1]
-                                                    for (i=1; Object.keys(dataReceived).length;i++)
-                                                    {
-                                                        if (ColesArray[i][1] < min)
-                                                        {
-                                                            temp = ColesArray[i][1];
-                                                            ColesArray [i][1] = min;
-                                                            ColesArray[0][1] = temp;
-                                                        }
+
+
                                                     }
                                                     console.log(ColesArray);
 
 
                                                 }
-                                            }
+
 
                                             if (dataReceived != null) {
 
                                                 printResult();
-
                                             }
 
                                         });
@@ -201,7 +210,8 @@
                                 }
                                 function getFromWoolies()
 								{
-                                    var ref = firebase.database().ref("/Woolworths/");
+								    console.log("Here")
+                                    var ref = firebase.database().ref("/Coles/");
                                     ref.once("value")
                                         .then(function (snapshot) {
                                             dataReceived = snapshot.child(finalSearchQuery).val();
@@ -215,16 +225,8 @@
                                                         for (v = 0; v < Object.keys(dataReceived).length; v++) ;
                                                         WooliesArray[0][v] = myval;
                                                     }
-                                                    var min = WooliesArray[0][1]
-                                                    for (i=1; Object.keys(dataReceived).length;i++)
-                                                    {
-                                                        if (WooliesArray[i][1] < min)
-                                                        {
-                                                            temp = WooliesArray[i][1];
-                                                            WooliesArray [i][1] = min;
-                                                            WooliesArray[0][1] = temp;
-                                                        }
-                                                    }
+
+
                                                     console.log(WooliesArray);
                                                 }
                                             }
@@ -235,6 +237,9 @@
                                             }
 
                                         });
+
+                                }
+                                function Sort() {
 
                                 }
                             </script>
@@ -278,9 +283,10 @@
 
 //                                //The string with search query is finalSearchQuery
                                 if(finalSearchQuery!=null) {
+
+                                    getFromColes();
+                                    getFromWoolies();
                                     getDataFromDatabase();
-                                    getFromColes;
-                                    getFromWoolies;
 
                                 }
 
@@ -339,24 +345,26 @@
 
 									</span>
 									<header class="major">
-										<h3>COLES</h3>
+										<h3 style="color:white;">COLES</h3>
 									</header>
 								</article>
+
 								<article>
 									<span class="image">
 
 									</span>
 									<header class="major">
-										<h3>WOOLWORTHS</h3>
+										<h3 style="color:white;">WOOLWORTHS</h3>
 
 									</header>
 								</article>
+
 								<article>
 									<span class="image">
 
 									</span>
 									<header class="major">
-										<h3>ALDI</h3>
+										<h3 style="color:white;">ALDI</h3>
 
 									</header>
 								</article>
@@ -395,9 +403,9 @@
 									<header class="major">
 										<h2>Grocery Hack</h2>
 									</header>
-									<p>Buy everything on one platform with confidence that you're getting them for the best price.</p>
+									<h3 style="color: black;">Buy everything on one platform with confidence that you're getting them for the best price.</h3>
 									<ul class="actions">
-										<li><a href="landing.html" class="button next">Get Started</a></li>
+										<li><a href="landing.html" class="button next" style="color: black">Get Started</a></li>
 									</ul>
 								</div>
 							</section>
