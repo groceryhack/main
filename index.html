@@ -63,6 +63,28 @@
                             <ul id="slide-out" class="side-nav" >
                                 <li><a href="#!"><i class="material-icons">clear</i>My List:</a></li>
 
+                                <table style="color:black">
+                                    <tr style="background-color: #4CAF50; color: white">
+                                        <th>Item</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                        <th>Subtotal</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Apple</td>
+                                        <td>2</td>
+                                        <td>5</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Beef</td>
+                                        <td>5</td>
+                                        <td>10</td>
+                                        <td>50</td>
+                                    </tr>
+
+                                </table>
+
                             </ul>
                             <a href="#" data-activates="slide-out" class="button-collapse" style="border: 0.5px solid #87c5b2;color: #000;background-color: #87c5a4"><i class="material-icons">shopping_cart</i></a>
 
@@ -95,132 +117,129 @@
 					<section id="banner" class="major">
 						<div class="inner">
 
-                            <!--<script>-->
-
-                                <!--// JS Section 1: Getting the search retrieval-->
-                                <!--var dataReceived;-->
-                                <!--var dataReceivedFrombAldi;-->
-                                <!--var dataRecievedFromColes;-->
-                                <!--var dataRecievedFromWoolies;-->
-                                <!--var igotthekey;-->
-                                <!--var myval;-->
-                                <!--var AldiArray = [[], []];-->
-                                <!--var ColesArray = [[], []];-->
-                                <!--var WooliesArray = [[], []];-->
-
-
-                                <!--function getDataFromAldi() {-->
                             <script>
+                                //Getting the search retrieval
+//                                var dataReceived;
+//                                function getDataFromDatabase() {
+//                                    var ref = firebase.database().ref("/Aldi/");
+//                                    ref.once("value")
+//                                        .then(function (snapshot) {
+//                                            dataReceived = snapshot.child(finalSearchQuery).val();
+//                                            if (dataReceived!=null) {
+//                                                printResult();
+//                                            }
+//                                        });
+//                                }
+//
+//                                function showList(){
+//                                    document.getElementById('resultList').style.display= "show";
+//                                }
+
+                                //Getting the search retrieval
+                                var dataReceived;
+                                var igotthekey;
+                                var myval;
+                                var arr = [[], []];
+                                var ColesArray = [[], []];
+                                var WooliesArray = [[], []];
+
+
+                                function getDataFromDatabase() {
+
                                     var ref = firebase.database().ref("/Aldi/");
                                     ref.once("value")
                                         .then(function (snapshot) {
+                                            dataReceived = snapshot.child(finalSearchQuery).val();
+
+                                            for (var key in dataReceived) {
+                                                if (dataReceived.hasOwnProperty(key)) {
+                                                    igotthekey = key;
+                                                    myval = dataReceived[key];
+                                                    for (i = 0; i < Object.keys(dataReceived).length; i++) {
+                                                        arr[i][0] = key;
+                                                        for (v = 0; v < Object.keys(dataReceived).length; v++) ;
+                                                        arr[0][v] = myval;
+                                                    }
+
+                                                    }
+
+                                                    console.log(arr);
+                                                }
+
+
+                                            if (dataReceived != null) {
+
+                                                printResult();
                                             }
 
-                            </script>
-                                            <!--dataReceived = snapshot.child(finalSearchQuery).val();-->
 
-                                            <!--for (var key in dataReceived) {-->
-                                                <!--if (dataReceived.hasOwnProperty(key)) {-->
-                                                    <!--myval = dataReceived[key];-->
-                                                    <!--for (i = 0; i < Object.keys(dataReceived).length; i++) {-->
-                                                        <!--AldiArray[i][0] = key;-->
-                                                        <!--for (v = 0; v < Object.keys(dataReceived).length; v++) ;-->
-                                                        <!--AldiArray[0][v] = myval;-->
-                                                    <!--}-->
-<!--//                                                    var min = AldiArray[0][1];-->
-<!--//                                                    for (i = 1; Object.keys(dataReceived).length; i++) {-->
-<!--//                                                        if (AldiArray[i][1] < min) {-->
-<!--//                                                            temp = AldiArray[i][1];-->
-<!--//                                                            AldiArray [i][1] = min;-->
-<!--//                                                        }-->
-<!--//                                                    }    AldiArray[0][1] = temp;-->
-<!--//-->
-                                                <!--}-->
-                                            <!--}-->
-
-                                        <!--});-->
-                                <!--}-->
-                                <!--function getFromColes() {-->
-                                    <!--var ref = firebase.database().ref("/Coles/");-->
-                                    <!--ref.once("value")-->
-                                        <!--.then(function (snapshot) {-->
-                                            <!--dataReceived = snapshot.child(finalSearchQuery).val();-->
-
-                                            <!--for (var key in dataReceived) {-->
-                                                <!--if (dataReceived.hasOwnProperty(key)) {-->
-                                                    <!--igotthekey = key;-->
-                                                    <!--myval = dataReceived[key];-->
-                                                    <!--for (i = 0; i < Object.keys(dataReceived).length; i++) {-->
-                                                        <!--ColesArray[i][0] = key;-->
-                                                        <!--for (v = 0; v < Object.keys(dataReceived).length; v++) ;-->
-                                                        <!--ColesArray[0][v] = myval;-->
-                                                    <!--}-->
-                                                    <!--var min = ColesArray[0][1];-->
-                                                    <!--for (i=1; Object.keys(dataReceived).length;i++)-->
-                                                    <!--{-->
-                                                        <!--if (ColesArray[i][1] < min)-->
-                                                        <!--{-->
-                                                            <!--temp = ColesArray[i][1];-->
-                                                            <!--ColesArray [i][1] = min;-->
-                                                            <!--ColesArray[0][1] = temp;-->
-                                                        <!--}-->
-                                                    <!--}-->
-                                                    <!--console.log(ColesArray);-->
-
-
-                                                <!--}-->
-                                            <!--}-->
-
-                                        <!--});-->
-
-                                <!--}-->
-                                <!--function getFromWoolies()-->
-								<!--{-->
-                                    <!--var ref = firebase.database().ref("/Woolworths/");-->
-                                    <!--ref.once("value")-->
-                                        <!--.then(function (snapshot) {-->
-                                            <!--dataReceived = snapshot.child(finalSearchQuery).val();-->
-
-                                            <!--for (var key in dataReceived) {-->
-                                                <!--if (dataReceived.hasOwnProperty(key)) {-->
-                                                    <!--igotthekey = key;-->
-                                                    <!--myval = dataReceived[key];-->
-                                                    <!--for (i = 0; i < Object.keys(dataReceived).length; i++) {-->
-                                                        <!--WooliesArray[i][0] = key;-->
-                                                        <!--for (v = 0; v < Object.keys(dataReceived).length; v++) ;-->
-                                                        <!--WooliesArray[0][v] = myval;-->
-                                                    <!--}-->
-                                                    <!--var min = WooliesArray[0][1];-->
-                                                    <!--for (i=1; Object.keys(dataReceived).length;i++)-->
-                                                    <!--{-->
-                                                        <!--if (WooliesArray[i][1] < min)-->
-                                                        <!--{-->
-                                                            <!--temp = WooliesArray[i][1];-->
-                                                            <!--WooliesArray [i][1] = min;-->
-                                                            <!--WooliesArray[0][1] = temp;-->
-                                                        <!--}-->
-                                                    <!--}-->
-
-                                                <!--}-->
-                                            <!--}-->
-
-                                        <!--});-->
-
-                                <!--}-->
-
-                            <!--</script>-->
-
-                            <script>
-                                var json = $.parseJSON(data);
-                                var keys = array();
-                                for(var key in json[16].events.burstevents){
-                                    keys.push(key)
+                                });
                                 }
 
+                                  function getFromColes() {
+                                                var ref = firebase.database().ref("/Coles/");
+                                                ref.once("value")
+                                                    .then(function (snapshot) {
+                                                        dataReceived = snapshot.child(finalSearchQuery).val();
+
+                                                        for (var key in dataReceived) {
+                                                            if (dataReceived.hasOwnProperty(key)) {
+                                                                igotthekey = key;
+                                                    myval = dataReceived[key];
+                                                    for (i = 0; i < Object.keys(dataReceived).length; i++) {
+                                                        ColesArray[i][0] = key;
+                                                        for (v = 0; v < Object.keys(dataReceived).length; v++) ;
+                                                            ColesArray[0][v] = myval;
+                                                    }
+
+
+                                                    }
+                                                    console.log(ColesArray);
+
+
+                                                }
+
+
+                                            if (dataReceived != null) {
+
+                                                printResult();
+                                            }
+
+                                        });
+
+                                }
+                                function getFromWoolies()
+								{
+								    console.log("Here")
+                                    var ref = firebase.database().ref("/Coles/");
+                                    ref.once("value")
+                                        .then(function (snapshot) {
+                                            dataReceived = snapshot.child(finalSearchQuery).val();
+
+                                            for (var key in dataReceived) {
+                                                if (dataReceived.hasOwnProperty(key)) {
+                                                    igotthekey = key;
+                                                    myval = dataReceived[key];
+                                                    for (i = 0; i < Object.keys(dataReceived).length; i++) {
+                                                        WooliesArray[i][0] = key;
+                                                        for (v = 0; v < Object.keys(dataReceived).length; v++) ;
+                                                        WooliesArray[0][v] = myval;
+                                                    }
+
+
+                                                    console.log(WooliesArray);
+                                                }
+                                            }
+
+                                            if (dataReceived != null) {
+
+                                                printResult();
+                                            }
+
+                                        });
+
+                                }
                             </script>
-
-
-
                             <h2 style="margin: auto">We understand your need to save a little more on your necessities to spend a little more on the ones you love.</h2>
                             <h5>Thats why we have our state of the art engines running continuously to get real time product information and accurate prices from your favourite Coles, Aldi and Woolworths! Search your desired product here and add it to your shopping list!</h5>
                             <br>
@@ -229,7 +248,6 @@
 								<input type="text" name="search" class="autocomplete" id="search" placeholder="Search..">
 							</form>
 
-                            <!--JS Section 2: Getting the search query-->
 							<script> // From https://stackoverflow.com/questions/2090657/how-do-i-switch-external-css-files/2090682#2090682
                             var searchObject;
                             var finalSearchQuery;
@@ -237,33 +255,57 @@
                             function hideImages(event){
                                 event.preventDefault();
                                 document.getElementById('pagestyle_css').href='assets/css/main-enter.css';
+
                                 searchObject = document.getElementById('search').value;
                                 finalSearchQuery = searchObject.toLowerCase();
 
-                                //The string with search query is finalSearchQuery
-                                if(finalSearchQuery!=null) {
-//                                    getDataFromAldi();
-//                                    getFromColes();
-//                                    getFromWoolies()
-
-                                function repeatList(array,content) {
+                                function repeatList(array,b) {
                                     for (var number in array) {
-                                        var newList = $("<li><div class=\"collapsible-header active\">" + array[number] + "</div><div class=\"collapsible-body\"><span>"+ content+"</span></div></li>");
+                                        var newList = $("<li><div class=\"collapsible-header active\">" + array[number] + "</div><div class=\"collapsible-body\"><span>"+ b+"</span></div></li>");
                                         $('#items').append(newList);
                                     }
-
                                 }
 
-                               var testSet1 = ["Aldi: 2 kg at $5","Aldi: per piece at $0.75", "Coles: 2 kg at $9", "Coles: per piece at $0.9","Woolworths: 2 kg at $8","Woolworths: per piece at $0.9"];
-                               var testSet2 = ["Aldi: 2 kg at $5","Aldi: per piece at $0.75", "Coles: 2 kg at $9", "Coles: per piece at $0.9","Woolworths: 2 kg at $8","Woolworths: per piece at $0.9"];
+                                var beef = ["Aldi: 500g at $4", "Aldi: per piece at $10,4","Coles: 500g at $4.50","Coles: per piece at $11.50","Woolworths: 500g at $3.75","Woolsworths: per piece at $9"]
+                                var chips = ["Aldi: 170g at $5","Coles: 170g at $5","Woolsworths: 170g at $5"]
+                                var eggs = ["Aldi: 12 pack at $4.20","Coles: 12 pack at $3.90","Woolsworths: 12 pack at $4.00"]
+                                var fish = ["Aldi: 215g at $6.43","Coles: 215g at $5.93","Woolsworths: 215g at $5.50"]
+                                var watermelon = ["Aldi: per kg at $9.75","Coles: per kg at $11.00","Woolsworths: per kg at $9.50"]
+                                var bagel = ["Aldi: 360g at $5.00","Coles: 360g at 5.00","Woolsworths: $360g at $4.50"]
+                                var yoghurt = ["Aldi: 1 kg at $4.00","Coles: 1 kg at $3.80","Woolsworths: 1 kg at $4.20"]
+                                var steak = ["Aldi: 400g at $12.00","Coles: 400g at $11.50","Woolsworths: 400g at $15.00"]
+                                var lettuce = ["Aldi: 200g at $2.50","Coles: 200g at $2.70","Woolsworth: 200g at $2.65"]
+                                var milk = ["Aldi: 2 litres at $2.00","Aldi: 3 litres at $3.00","Coles: 2 litres at $2.00","Coles: 3 litres at $3.00","Woolsworths: 2 litres at $2.00","Woolsworths: 3 litres at $3.00"]
+                                var whitetoast = ["Aldi: 1 loaf at $3.50","Coles: 1 loaf at $4.00","WoolsWorth: 1 loaf at $3.20"]
 
-                               if(finalSearchQuery=="apple") {
-                                   repeatList(testSet1, "All the items are fresh and new!")
-                               }else if(finalSearchQuery=="chicken"), ""
+                                //The string with search query is finalSearchQuery
+                             if (finalSearchQuery == "beef"){
+                                    repeatList(beef, "Good stuff");
+                             }else if(finalSearchQuery == "chips"){
+                                 repeatList(chips, "You will get all the cheapest items sorted at our place!")
+                             }else if(finalSearchQuery == "eggs"){
+                                 repeatList(eggs, "You will get all the cheapest items sorted at our place!")
+                             }else if(finalSearchQuery == "fish"){
+                                 repeatList(fish, "You will get all the cheapest items sorted at our place!")
+                             }else if(finalSearchQuery == "watermelon"){
+                                 repeatList(watermelon, "You will get all the cheapest items sorted at our place!")
+                             }else if(finalSearchQuery == "bagel"){
+                                 repeatList(bagel, "You will get all the cheapest items sorted at our place!")
+                             }else if(finalSearchQuery == "yoghurt"){
+                                 repeatList(yoghurt, "You will get all the cheapest items sorted at our place!")
+                             }else if(finalSearchQuery == "steak"){
+                                 repeatList(sreak, "You will get all the cheapest items sorted at our place!")
+                             }else if(finalSearchQuery == "lettuce"){
+                                 repeatList(lettuce, "You will get all the cheapest items sorted at our place!")
+                             }else if(finalSearchQuery == "milk"){
+                                 repeatList(milk, "You will get all the cheapest items sorted at our place!")
+                             }else if(finalSearchQuery == "whitetoast"){
+                                 repeatList(whitetoast, "You will get all the cheapest items sorted at our place!")
+                             }
 
-                            }}
-
+                            }
 							</script>
+
 						</div>
 					</section>
 
@@ -272,10 +314,7 @@
                     <br>
                     <p>The items are available:</p>
                     <ul id="items" class="collapsible popout" data-collapsible="expandable">
-                        <li>
-                            <div class="collapsible-header active">First</div>
-                            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                        </li>
+
                     </ul>
 
                 </div>
@@ -285,11 +324,9 @@
                 $('.collapsible').collapsible();
                 });
 
-
                 </script>
 
                 <!-- Main -->
-
 					<div id="main">
 
 						<!-- One -->
@@ -299,7 +336,7 @@
 
 									</span>
 									<header class="major">
-										<h3>COLES</h3>
+										<h3 style="color:white;">COLES</h3>
 									</header>
 								</article>
 								<article>
@@ -307,7 +344,7 @@
 
 									</span>
 									<header class="major">
-										<h3>WOOLWORTHS</h3>
+										<h3 style="color:white;">WOOLWORTHS</h3>
 
 									</header>
 								</article>
@@ -316,10 +353,11 @@
 
 									</span>
 									<header class="major">
-										<h3>ALDI</h3>
+										<h3 style="color:white;">ALDI</h3>
 
 									</header>
 								</article>
+
 							</section>
 
 						<!-- Two -->
@@ -330,7 +368,7 @@
 									</header>
 									<p>Buy everything on one platform with confidence that you're getting them for the best price.</p>
 									<ul class="actions">
-										<li><a href=#" class="button next">Get Started</a></li>
+										<li><a href="landing.html" class="button next">Get Started</a></li>
 									</ul>
 								</div>
 							</section>
